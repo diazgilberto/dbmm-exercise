@@ -1,6 +1,8 @@
 # Exercise 6.6
 **Author:** *Gilberto Diaz*
+
 **Profesor:** *Dr. Jordon Shaw*
+
 **Course:** *MSSE 5123*
 
 Repeat Exercise 6.5, but use the AIRLINE database schema of Figure 5.8.
