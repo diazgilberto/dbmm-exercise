@@ -4,8 +4,18 @@
 **Profesor:** *Dr. Jordon Shaw*
 
 **Course:** *MSSE 5123*
+<br>
 
 Repeat Exercise 6.5, but use the AIRLINE database schema of Figure 5.8.
 
 *Question 6.5*
-> Consider the database shown in Figure 1.2, whose schema is shown in Figure 2.1. What are the referential intgrity onstraints that should hold on the schema? Write appropriate SQL DDL statements to define the database.
+> Consider the database shown in Figure 1.2, whose schema is shown in Figure 2.1. What are the referential integrity constraints that should hold on the schema? Write appropriate SQL DDL statements to define the database.
+
+```sql
+CREATE TABLE AIRPORT(
+    Airport_code INTEGER PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(64) NOT NULL,
+    City VARCHAR(32) NOT NULL,
+    State(2) NOT NULL
+    );
+```
