@@ -10,6 +10,17 @@ Repeat Exercise 6.5, but use the AIRLINE database schema of Figure 5.8.
 
 *Question 6.5*
 > Consider the database shown in Figure 1.2, whose schema is shown in Figure 2.1. What are the referential integrity constraints that should hold on the schema? Write appropriate SQL DDL statements to define the database.
+<br>
+
+The referential integrity constraints that should hold on the schema are...
+
+Table|Primary Key|Foreign Key Table
+----|----|----
+FLIGHT|Flight_number|On... FLIGHT_LEG, LEG_INSTANCE, FARE, SEAT_RESERVATION
+FLIGHT_LEG|Leg_number|On... LEG_INSTANCE, SEAT_RESERVATION
+AIRPLANE|Airplane_id|On... LEG_INSTANCE
+AIRPLANE_TYPE|Airplane_type_name_number|On... CAN_LAND
+AIRPORT|Airport_code|On... CAN_LAND
 
 ```sql
 
@@ -69,7 +80,9 @@ CREATE TABLE FARE (
 	Fare_code INTEGER(11) PRIMARY KEY AUTO_INCREMENT,
 	Flight_number INTEGER(11),
 	Amount DECIMAL(15, 2),
-	Restrictions VARCHAR(128)
+	Restrictions VARCHAR(128),
+	FOREIGN KEY (Flight_number)
+		REFERENCES FLIGHT (Flight_number)
 );
 
 CREATE TABLE AIRPLANE_TYPE (
@@ -102,6 +115,4 @@ CREATE TABLE SEAT_RESERVATION (
 	FOREIGN KEY (Leg_number)
 		REFERENCES FLIGHT_LEG (Leg_number)
 );
-
-
 ```
