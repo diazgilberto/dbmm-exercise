@@ -17,7 +17,7 @@ The referential integrity constraints that should hold on the schema are...
 Table|Primary Key|Foreign Key Table
 ----|----|----
 FLIGHT|Flight_number|On... FLIGHT_LEG, LEG_INSTANCE, FARE, SEAT_RESERVATION
-FLIGHT_LEG|Leg_number|On... LEG_INSTANCE, SEAT_RESERVATION
+LEG_INSTANCE|Leg_number|On... FLIGHT_LEG, SEAT_RESERVATION
 AIRPLANE|Airplane_id|On... LEG_INSTANCE
 AIRPLANE_TYPE|Airplane_type_name_number|On... CAN_LAND
 AIRPORT|Airport_code|On... CAN_LAND
