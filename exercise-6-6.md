@@ -25,6 +25,7 @@ AIRPORT|Airport_code|On... CAN_LAND
 **NOTE:**
 > `Airplane_type_name` is to be understood as a `VARCHAR`, therefore, based on the restrictions of MySQL, it can't be used a `FOREIGN KEY`, which make sense since can't guarantee it uniqueness as a `PRIMARY KEY`.
 <br>
+
 ```sql
 
 CREATE DATABASE IF NOT EXISTS airline;
