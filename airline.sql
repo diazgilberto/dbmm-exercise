@@ -1,32 +1,3 @@
-# Exercise 6.6
-**Author:** *Gilberto Diaz*
-
-**Profesor:** *Dr. Jordon Shaw*
-
-**Course:** *MSSE 5123*
-<br>
-
-Repeat Exercise 6.5, but use the AIRLINE database schema of Figure 5.8.
-
-*Question 6.5*
-> Consider the database shown in Figure 1.2, whose schema is shown in Figure 2.1. What are the referential integrity constraints that should hold on the schema? Write appropriate SQL DDL statements to define the database.
-<br>
-
-The referential integrity constraints that should hold on the schema are...
-
-Table|Primary Key|Foreign Key Table
-----|----|----
-FLIGHT|Flight_number|On... FLIGHT_LEG, LEG_INSTANCE, FARE, SEAT_RESERVATION
-FLIGHT_LEG|Leg_number|On... LEG_INSTANCE, SEAT_RESERVATION
-AIRPLANE|Airplane_id|On... LEG_INSTANCE
-AIRPLANE_TYPE|Airplane_type_name_number|On... CAN_LAND
-AIRPORT|Airport_code|On... CAN_LAND
-
-**NOTE:**
-> `Airplane_type_name` is to be understood as a `VARCHAR`, therefore, based on the restrictions of MySQL, it can't be used a `FOREIGN KEY`, which make sense since can't guarantee it uniqueness as a `PRIMARY KEY`.
-<br>
-
-```sql
 
 CREATE DATABASE IF NOT EXISTS airline;
 USE airline;
@@ -47,17 +18,14 @@ CREATE TABLE FLIGHT (
 );
 
 CREATE TABLE FLIGHT_LEG (
-	Flight_number INTEGER(11),
-	Leg_number INTEGER(11),
+	Leg_number INTEGER(11) PRIMARY KEY AUTO_INCREMENT,
 	Departure_airport_code VARCHAR(32),
 	Schedule_departure_time DATETIME,
 	Arrival_airport_code VARCHAR(32),
 	Schedule_arrival_time DATETIME,
-        PRIMARY KEY (Flight_number, Leg_number),
+	Flight_number INTEGER(11),
 	FOREIGN KEY (Flight_number)
-		REFERENCES FLIGHT (Flight_number),
-        FOREIGN KEY (Leg_number)
-            REFERENCES LEG_INSTANCE (Leg_number)
+		REFERENCES FLIGHT (Flight_number)
 );
 
 CREATE TABLE AIRPLANE (
@@ -122,4 +90,4 @@ CREATE TABLE SEAT_RESERVATION (
 	FOREIGN KEY (Leg_number)
 		REFERENCES FLIGHT_LEG (Leg_number)
 );
-```
+
