@@ -4,6 +4,7 @@
 **Profesor:** *Dr. Jordon Shaw*
 
 **Course:** *MSSE 5123*
+
 <br>
 Write appropriate `SQL` statements for declaring the `LIBRARY` relational database schema of Figure 6.6. Specify the keys and referential triggered actions.
 <br>
