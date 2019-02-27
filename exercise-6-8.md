@@ -1,7 +1,7 @@
 # Exercise 6.8
 **Author:** *Gilberto Diaz*
 
-**Profesor:** *Dr. Jordon Shaw*
+**Professor:** *Dr. Jordon Shaw*
 
 **Course:** *MSSE 5123*
 
