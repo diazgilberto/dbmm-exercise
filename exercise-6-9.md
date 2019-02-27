@@ -1,4 +1,4 @@
-# Exercise 6.p
+# Exercise 6.9
 **Author:** *Gilberto Diaz*
 
 **Professor:** *Dr. Jordon Shaw*
