@@ -23,4 +23,5 @@ DELETE EMPLOYEE WHERE Lname = 'Borg'
 All 8 rows from the `EMPLOYEE` table got deleted.
 
 2. Is it better to `CASCADE` or `SET NULL` in case of `EMPSUPERFK` constraint `ON DELETE`?
+
 Yes, it is better to `SET NULL`, since an employee is not deleted when their supervisor is deleted.
