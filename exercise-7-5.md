@@ -24,17 +24,4 @@ Headquaters|1|1
 
 2. Suppose that we want the number of male employees in each department making more than $30,000, rather than all employees (as in Exercise 7.5a). Can we specify this query in `SQL`? Why or why not?
 
-```sql
-SELECT D.Dname, Count(*) FROM DEPARTMENT D, EMPLOYEE E
-    WHERE D.Dnumber = E.Dno AND E.Sex = 'M'
-        AND E.Dno IN 
-            (SELECT E.Dno FROM EMPLOYEE 
-                GROUP BY E.Dno 
-                    HAVING AVG(E.Salary) > 30000 GROUP BY D.Dname)
-```
-
-Dname|Dnumber|Count(*)
-----|----|----
-Research|5|3
-Administration|4|1
-Headquaters|1|1
+Yes we can. Since the `EMPLOYEE` table has the field `Sex` we can add a condition for `Sex = 'M'`.
