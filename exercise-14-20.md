@@ -14,7 +14,7 @@ In `EMP_DEPT`:
 - Deletion Anomalies - If one delete an employee the `EMP_PROJ` gets affected since `Ssn` is the `PRIMARY KEY` in the table.
 - Modification Anomalies - Since the employee's name is in the `EMP_PROJ` as well their is a change to have inconsistency in the data. Updating the name has to be done in two table which make code to start been unmanageable.
 
-In `EMP_PROJ`
+In `EMP_PROJ`:
 
 - Insertion Anomalies - We can't create a new project without an employee since `Ssn` is a `PRIMARY KEY` in the table. `EMP_PROJ` should have its own `PRIMARY KEY` and create a new table to link employees to a project.
 - Deletion Anomalies - For deleting a project one has to find all the people that are assigned to that project and hoping that `Pnumber` are all the same.
