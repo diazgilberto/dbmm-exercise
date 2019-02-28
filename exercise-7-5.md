@@ -22,7 +22,7 @@ Research|5|4
 Administration|4|3
 Headquaters|1|1
 
-1. Suppose that we want the number of male employees in each department making more than $30,000, rather than all employees (as in Exercise 7.5a). Can we specify this query in `SQL`? Why or why not?
+2. Suppose that we want the number of male employees in each department making more than $30,000, rather than all employees (as in Exercise 7.5a). Can we specify this query in `SQL`? Why or why not?
 
 ```sql
 SELECT D.Dname, Count(*) FROM DEPARTMENT D, EMPLOYEE E
